@@ -18,7 +18,8 @@
     "baseUrl": ".",
     "paths": {
       "@ng-mf/data-access-user": ["libs/shared/data-access-user/src/index.ts"],
-      "login/Routes": ["apps/login/src/app/remote-entry/entry.routes.ts"]
+      "login/Routes": ["apps/login/src/app/remote-entry/entry.routes.ts"],
+      "todo/Routes": ["apps/todo/src/app/remote-entry/entry.routes.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

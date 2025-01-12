@@ -1,3 +1,4 @@
 {
-  "login": "http://localhost:4201/mf-manifest.json"
+  "login": "http://localhost:4201/mf-manifest.json",
+  "todo": "http://localhost:4202/mf-manifest.json"
 }
