@@ -14,7 +14,8 @@ const config: ModuleFederationConfig = {
    * declare module 'my-external-remote';
    *
    */
-  remotes: ['login'],
+  // remotes: ['login'],// At the moment, webpack is statically building our application, telling it at build time where our Remotes are. That is because they are specified in the module-federation.config.ts file.
+  remotes: [],
 };
 
 /**

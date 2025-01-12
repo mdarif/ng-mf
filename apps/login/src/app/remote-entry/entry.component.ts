@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '@ng-mf/data-access-user';
-import { inject } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -47,10 +46,13 @@ import { inject } from '@angular/core';
   ],
 })
 export class RemoteEntryComponent {
-  private userService = inject(UserService);
   username = '';
   password = '';
-  isLoggedIn$ = this.userService.isUserLoggedIn$;
+  isLoggedIn$;
+
+  constructor(private userService: UserService) {
+    this.isLoggedIn$ = this.userService.isUserLoggedIn$;
+  }
 
   login() {
     this.userService.checkCredentials(this.username, this.password);
