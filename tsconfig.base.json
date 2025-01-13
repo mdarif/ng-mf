@@ -17,6 +17,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ng-mf/chat-bot": ["libs/shared/components/chat-bot/src/index.ts"],
       "@ng-mf/data-access-user": ["libs/shared/data-access-user/src/index.ts"],
       "login/Routes": ["apps/login/src/app/remote-entry/entry.routes.ts"],
       "todo/Routes": ["apps/todo/src/app/remote-entry/entry.routes.ts"]
