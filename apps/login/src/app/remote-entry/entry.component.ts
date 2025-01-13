@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '@ng-mf/data-access-user';
+import { ChatBotComponent } from 'login/chatBot';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ChatBotComponent],
   selector: 'ng-mf-login-entry',
   template: `
     <div class="login-app">
@@ -20,6 +21,7 @@ import { UserService } from '@ng-mf/data-access-user';
         </label>
         <button type="submit">Login</button>
       </form>
+      <lib-chat-bot></lib-chat-bot>
       <div *ngIf="isLoggedIn$ | async">User is logged in!</div>
       <div *ngIf="(isLoggedIn$ | async) === false">User is not logged in!</div>
     </div>
