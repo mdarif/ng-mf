@@ -3,13 +3,16 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { UserService } from '@ng-mf/data-access-user';
 import { distinctUntilChanged } from 'rxjs/operators';
+import { ChatBotComponent } from 'login/chatBot';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ChatBotComponent],
   selector: 'ng-mf-root',
   template: `
     <div class="dashboard-nav">Admin Dashboard</div>
+    <-- This is the chat bot component that is exposed by the shared library -->
+    <lib-chat-bot></lib-chat-bot>
     <div *ngIf="isLoggedIn$ | async; else signIn">
       You are authenticated so you can see this content.
     </div>

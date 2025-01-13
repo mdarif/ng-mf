@@ -21,6 +21,7 @@ import { ChatBotComponent } from 'login/chatBot';
         </label>
         <button type="submit">Login</button>
       </form>
+      <!-- This is the chat bot component that is exposed by the shared library -->
       <lib-chat-bot></lib-chat-bot>
       <div *ngIf="isLoggedIn$ | async">User is logged in!</div>
       <div *ngIf="(isLoggedIn$ | async) === false">User is not logged in!</div>
