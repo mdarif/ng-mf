@@ -8,13 +8,16 @@ const config: ModuleFederationConfig = {
    *
    * remotes: [['my-external-remote', 'https://nx-angular-remote.netlify.app']]
    *
-   * You _may_ need to add a `remotes.d.ts` file to your `src/` folder declaring the external remote for tsc, with the
+   * You _may_ need to add a `remotes.d.ts` file to your `src/` folder declaring the external 
+   * remote for tsc, with the
    * following content:
    *
    * declare module 'my-external-remote';
    *
    */
-  // remotes: ['login'],// At the moment, webpack is statically building our application, telling it at build time where our Remotes are. That is because they are specified in the module-federation.config.ts file.
+  // remotes: ['login'],// At the moment, webpack is statically building our application, 
+  // telling it at build time where our Remotes are. That is because they are specified in 
+  // the module-federation.config.ts file.
   remotes: [],
 };
 
