@@ -9,23 +9,24 @@ import { ChatBotComponent } from 'login/chatBot';
   standalone: true,
   imports: [CommonModule, RouterModule, ChatBotComponent],
   selector: 'ng-mf-root',
-  template: `
-    <div class="dashboard-nav">Admin Dashboard</div>
-    <!-- This is the chat bot component that is exposed by the shared library -->
-    <ac-chat-bot></ac-chat-bot>
-    <div *ngIf="isLoggedIn$ | async; else signIn">
-      You are authenticated so you can see this content.
-    </div>
-    <ng-template #signIn><router-outlet></router-outlet></ng-template>
-  `,
+  templateUrl: 'app.component.html',
 })
 export class AppComponent implements OnInit {
-  isLoggedIn$;
+  // This is a public property that is exposed by the shared library
+  public isLoggedIn$;
 
+  /*
+    * This is a constructor that injects the UserService and Router services.
+    * It also subscribes to the isLoggedIn$ observable and navigates to the login page
+    * if the user is not logged in.
+    */
   constructor(private userService: UserService, private router: Router) {
     this.isLoggedIn$ = this.userService.isUserLoggedIn$;
   }
 
+  /**
+   * This is an ngOnInit lifecycle hook that subscribes to the isLoggedIn$ observable
+   */
   ngOnInit() {
     this.isLoggedIn$
       .pipe(distinctUntilChanged())
