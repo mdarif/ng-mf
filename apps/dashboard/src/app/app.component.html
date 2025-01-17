@@ -1,7 +1,8 @@
 <div class="dashboard-nav">Admin Dashboard</div>
     <!-- This is the chat bot component that is exposed by the shared library -->
     <ac-chat-bot></ac-chat-bot>
-    <div *ngIf="isLoggedIn$ | async; else signIn">
+    @if (isLoggedIn$ | async) {
       You are authenticated so you can see this content.
-    </div>
-    <ng-template #signIn><router-outlet></router-outlet></ng-template>
+    } @else {
+      <router-outlet></router-outlet>
+    }
