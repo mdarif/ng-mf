@@ -1,17 +1,42 @@
-<div class="login-app">
+<div class="login-app border-b border-gray-900/10 pb-12 dark:border-gray-300">
   <form class="login-form" (ngSubmit)="login()">
-    <label>
+    <label class="block text-gray-900 dark:text-gray-100">
       Username:
-      <input type="text" name="username" [(ngModel)]="username" />
+      <input
+        type="text"
+        name="username"
+        [(ngModel)]="username"
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:focus:ring-blue-400 dark:focus:border-blue-400"
+      />
     </label>
-    <label>
+    <label class="block text-gray-900 dark:text-gray-100 mt-4">
       Password:
-      <input type="password" name="password" [(ngModel)]="password" />
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:focus:ring-blue-400 dark:focus:border-blue-400"
+      />
     </label>
-    <button type="submit">Login</button>
+    <button
+      type="submit"
+      class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-blue-700 dark:hover:bg-blue-800 dark:focus:ring-blue-500"
+    >
+      Login
+    </button>
   </form>
   <!-- This is the chat bot component that is exposed by the shared library -->
   <ac-chat-bot></ac-chat-bot>
-  <div *ngIf="isLoggedIn$ | async">User is logged in!</div>
-  <div *ngIf="(isLoggedIn$ | async) === false">User is not logged in!</div>
+  <div
+    *ngIf="isLoggedIn$ | async"
+    class="text-green-500 dark:text-green-300 mt-4"
+  >
+    User is logged in!
+  </div>
+  <div
+    *ngIf="(isLoggedIn$ | async) === false"
+    class="text-red-500 dark:text-red-300 mt-4"
+  >
+    User is not logged in!
+  </div>
 </div>

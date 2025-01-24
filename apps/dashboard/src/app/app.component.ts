@@ -4,6 +4,7 @@ import { Router, RouterModule } from '@angular/router';
 import { UserService } from '@ng-mf/data-access-user';
 import { distinctUntilChanged } from 'rxjs/operators';
 import { ChatBotComponent } from 'login/chatBot';
+import { DarkModeService } from '@ng-mf/dark-mode';
 
 @Component({
   standalone: true,
@@ -20,7 +21,7 @@ export class AppComponent implements OnInit {
     * It also subscribes to the isLoggedIn$ observable and navigates to the login page
     * if the user is not logged in.
     */
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UserService, private router: Router, private darkModeService: DarkModeService) {
     this.isLoggedIn$ = this.userService.isUserLoggedIn$;
   }
 
@@ -28,6 +29,9 @@ export class AppComponent implements OnInit {
    * This is an ngOnInit lifecycle hook that subscribes to the isLoggedIn$ observable
    */
   ngOnInit() {
+    // Load the dark mode preference from local storage
+    this.darkModeService.loadDarkModePreference();
+
     this.isLoggedIn$
       .pipe(distinctUntilChanged())
       .subscribe(async (loggedIn) => {
@@ -40,5 +44,12 @@ export class AppComponent implements OnInit {
           }
         });
       });
+  }
+
+  /**
+   * This method is used to toggle the dark mode
+   */
+  toggleDarkMode(): void {
+    this.darkModeService.toggleDarkMode();
   }
 }

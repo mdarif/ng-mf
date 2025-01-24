@@ -18,6 +18,7 @@
     "baseUrl": ".",
     "paths": {
       "@ng-mf/chat-bot": ["libs/shared/components/chat-bot/src/index.ts"],
+      "@ng-mf/dark-mode": ["libs/shared/dark-mode/src/index.ts"],
       "@ng-mf/data-access-user": ["libs/shared/data-access-user/src/index.ts"],
       "login/Routes": ["apps/login/src/app/remote-entry/entry.routes.ts"],
       "login/chatBot": ["libs/shared/components/chat-bot/src/index.ts"],
