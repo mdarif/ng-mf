@@ -32,6 +32,7 @@
     "@types/node": "18.16.9",
     "@typescript-eslint/utils": "^8.13.0",
     "angular-eslint": "^19.0.2",
+    "autoprefixer": "^10.4.0",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-playwright": "^1.6.2",
@@ -39,7 +40,9 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-preset-angular": "~14.4.0",
     "nx": "20.3.1",
+    "postcss": "^8.4.5",
     "prettier": "^2.6.2",
+    "tailwindcss": "^3.0.2",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "tslib": "^2.3.0",
@@ -55,8 +58,8 @@
     "@angular/platform-browser": "~19.0.0",
     "@angular/platform-browser-dynamic": "~19.0.0",
     "@angular/router": "~19.0.0",
+    "@nx/angular": "^20.3.1",
     "rxjs": "~7.8.0",
-    "zone.js": "~0.15.0",
-    "@nx/angular": "^20.3.1"
+    "zone.js": "~0.15.0"
   }
 }
