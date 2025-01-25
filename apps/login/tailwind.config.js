@@ -1,4 +1,3 @@
-import { Config } from 'tailwindcss';
 import { createGlobPatternsForDependencies } from '@nx/angular/tailwind';
 import { join } from 'path';
 

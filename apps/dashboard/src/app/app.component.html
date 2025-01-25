@@ -1,18 +1,20 @@
 
-<div class="flex justify-end p-4">
-  <button
-    (click)="toggleDarkMode()"
-    class="bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-4 py-2 rounded"
-  >
-    Toggle Dark Mode
-  </button>
-</div>
+<div class="min-h-screen w-full bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-200">
+  <div class="flex justify-end p-4">
+    <button
+      (click)="toggleDarkMode()"
+      class="bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-4 py-2 rounded"
+    >
+      Toggle Dark Mode
+    </button>
+  </div>
 
-<div class="dashboard-nav">Admin Dashboard</div>
-    <!-- This is the chat bot component that is exposed by the shared library -->
-    <ac-chat-bot></ac-chat-bot>
-    @if (isLoggedIn$ | async) {
-      You are authenticated so you can see this content.
-    } @else {
-      <router-outlet></router-outlet>
-    }
+  <div class="dashboard-nav">Admin Dashboard</div>
+      <!-- This is the chat bot component that is exposed by the shared library -->
+      <ac-chat-bot></ac-chat-bot>
+      @if (isLoggedIn$ | async) {
+        You are authenticated so you can see this content.
+      } @else {
+        <router-outlet></router-outlet>
+      }
+</div>
