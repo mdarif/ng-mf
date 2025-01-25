@@ -8,7 +8,7 @@
         type="text"
         name="username"
         [(ngModel)]="username"
-        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:focus:ring-blue-400 dark:focus:border-blue-400"
+        class="login-input"
       />
     </label>
 
@@ -19,14 +19,14 @@
         type="password"
         name="password"
         [(ngModel)]="password"
-        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:focus:ring-blue-400 dark:focus:border-blue-400"
+        class="login-input"
       />
     </label>
 
     <!-- Submit Button -->
     <button
       type="submit"
-      class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-blue-700 dark:hover:bg-blue-800 dark:focus:ring-blue-500"
+      class="login-button"
     >
       Login
     </button>
@@ -46,7 +46,7 @@
   <!-- Error Message -->
   <h1
     *ngIf="(isLoggedIn$ | async) === false"
-    class="text-red-500 dark:text-red-400 mt-4 font-bold"
+    class="error-message"
   >
     User is not logged in!
   </h1>
@@ -55,7 +55,7 @@
   <div class="flex justify-end p-4">
     <button
       (click)="toggleDarkMode()"
-      class="bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-4 py-2 rounded"
+      class="toggle-button"
     >
       Toggle Dark Mode
     </button>
