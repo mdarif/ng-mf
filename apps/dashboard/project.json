@@ -5,6 +5,12 @@
   "prefix": "ng-mf",
   "sourceRoot": "apps/dashboard/src",
   "tags": [],
+  "implicitDependencies": [
+    "login",
+    "chat-bot",
+    "data-access-user",
+    "dark-mode"
+  ],
   "targets": {
     "build": {
       "executor": "@nx/angular:webpack-browser",
@@ -96,6 +102,14 @@
         "buildTarget": "dashboard:build",
         "port": 4200,
         "spa": true
+      }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "rm -rf production && mkdir production && cp -r ./apps/dashboard/* production && cp -r ./apps/login production",
+        "cwd": "dist"
       }
     }
   }

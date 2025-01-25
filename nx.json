@@ -21,6 +21,9 @@
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
+    "deploy": {
+      "dependsOn": ["build"]
+    },
     "@nx/eslint:lint": {
       "cache": true,
       "inputs": [
