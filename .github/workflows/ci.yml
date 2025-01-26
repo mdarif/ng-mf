@@ -43,7 +43,7 @@ jobs:
         run: |
           mkdir production && 
           cp -r ./apps/dashboard/* production && 
-          cp -r ./apps/login production"
+          cp -r ./apps/login production
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
