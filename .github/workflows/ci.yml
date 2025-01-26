@@ -39,6 +39,12 @@ jobs:
           npm run nx build login --base-href=/ng-mf/
           npm run nx build todo --base-href=/ng-mf/
 
+      - name: Prepare artifact
+        run: |
+          mkdir production && 
+          cp -r ./apps/dashboard/* production && 
+          cp -r ./apps/login production"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
