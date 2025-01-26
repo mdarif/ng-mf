@@ -10,6 +10,8 @@ permissions:
   actions: write
   contents: write
   pages: write
+  id-token: write
+  deployments: write
 
 jobs:
   build:
@@ -23,6 +25,13 @@ jobs:
       
       - run: npm ci --legacy-peer-deps
       - uses: nrwl/nx-set-shas@v4
+
+      - name: Set SHAs
+        uses: nrwl/nx-set-shas@v4
+        with:
+          main-branch-name: 'master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Build apps
         run: |

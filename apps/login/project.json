@@ -13,6 +13,7 @@
         "outputPath": "dist/apps/login",
         "index": "apps/login/src/index.html",
         "main": "apps/login/src/main.ts",
+        "baseHref": "/ng-mf/",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/login/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
@@ -30,6 +31,7 @@
       },
       "configurations": {
         "production": {
+          "baseHref": "/ng-mf/",
           "budgets": [
             {
               "type": "initial",

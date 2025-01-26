@@ -2,7 +2,9 @@
   "name": "@ng-mf/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "nx": "nx"
+  },
   "private": true,
   "devDependencies": {
     "@angular-devkit/build-angular": "~19.0.0",

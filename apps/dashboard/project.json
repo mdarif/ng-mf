@@ -19,6 +19,7 @@
         "outputPath": "dist/apps/dashboard",
         "index": "apps/dashboard/src/index.html",
         "main": "apps/dashboard/src/main.ts",
+        "baseHref": "/ng-mf/",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/dashboard/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
@@ -36,6 +37,7 @@
       },
       "configurations": {
         "production": {
+           "baseHref": "/ng-mf/",
           "budgets": [
             {
               "type": "initial",
@@ -54,6 +56,7 @@
           }
         },
         "development": {
+           "baseHref": "/",
           "buildOptimizer": false,
           "optimization": false,
           "vendorChunk": true,
