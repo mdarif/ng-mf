@@ -24,7 +24,6 @@ jobs:
           cache: 'npm'
       
       - run: npm ci --legacy-peer-deps
-      - uses: nrwl/nx-set-shas@v4
 
       - name: Set SHAs
         uses: nrwl/nx-set-shas@v4
@@ -41,20 +40,21 @@ jobs:
 
       - name: Prepare artifact
         run: |
-          mkdir production && 
-          cp -r ./apps/dashboard/* production && 
-          cp -r ./apps/login production
+          mkdir -p dist/production
+          cp -r dist/apps/dashboard/* dist/production/
+          cp -r dist/apps/login/* dist/production/login/
+          cp -r dist/apps/todo/* dist/production/todo/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/apps/dashboard
+          path: dist/production
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
-      name: github-pages # Add the environment here
+      name: github-pages
     
     steps:
       - name: Deploy to GitHub Pages
