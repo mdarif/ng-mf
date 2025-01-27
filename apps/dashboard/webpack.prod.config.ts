@@ -10,7 +10,8 @@ export default withModuleFederation(
   {
     ...config,
     remotes: [
-      ['login', 'http://localhost:4201']
+      ['login', 'https://mdarif.github.io/ng-mf/login/remoteEntry.mjs'],
+      ['todo', 'https://mdarif.github.io/ng-mf/todo/remoteEntry.mjs']
     ],
     /*
      * Remote overrides for production.

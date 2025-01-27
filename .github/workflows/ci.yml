@@ -34,9 +34,9 @@ jobs:
       
       - name: Build apps
         run: |
-          npm run nx build dashboard --base-href=/ng-mf/
-          npm run nx build login --base-href=/ng-mf/
-          npm run nx build todo --base-href=/ng-mf/
+          npm run nx build dashboard --configuration=production --base-href=/ng-mf/
+          npm run nx build login --configuration=production --base-href=/ng-mf/
+          npm run nx build todo --configuration=production --base-href=/ng-mf/
 
       - name: Prepare artifact
         run: |
