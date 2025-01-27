@@ -40,7 +40,8 @@ jobs:
 
       - name: Prepare artifact
         run: |
-          mkdir -p dist/production
+          mkdir -p dist/production/login
+          mkdir -p dist/production/todo
           cp -r dist/apps/dashboard/* dist/production/
           cp -r dist/apps/login/* dist/production/login/
           cp -r dist/apps/todo/* dist/production/todo/
