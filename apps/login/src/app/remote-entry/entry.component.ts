@@ -32,7 +32,7 @@ export class RemoteEntryComponent implements OnInit {
    * Lifecycle hook that runs when the component is initialized.
    */
   ngOnInit(): void {
-       // Load the dark mode preference from local storage
+    // Load the dark mode preference from local storage
     this.darkModeService.loadDarkModePreference();
   }
 
